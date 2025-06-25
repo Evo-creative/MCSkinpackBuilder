@@ -4,9 +4,8 @@
    - Put skin PNGs (e.g. `*.tga`, `*.png`,`*.jpg`) and script in same folder
 
 2. **Run Script**  
-   ```bash
-   chmod +x generate_skin_pack.sh
-   ./generate_skin_pack.sh
+   ```Powershell
+   pwsh build_en.ps1
    ```
 
 3. **Follow Prompts**  
