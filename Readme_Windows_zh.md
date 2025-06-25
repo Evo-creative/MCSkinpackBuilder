@@ -6,7 +6,7 @@
 
 2. **运行脚本**  
    ```Powershell
-   pwsh build_en.ps1
+   powershell -ExecutionPolicy Bypass -File .\build_zh.ps1
    ```
 
 3. **根据脚本指引填写**  

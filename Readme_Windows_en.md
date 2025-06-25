@@ -5,7 +5,7 @@
 
 2. **Run Script**  
    ```Powershell
-   pwsh build_en.ps1
+   powershell -ExecutionPolicy Bypass -File .\build_zh.ps1
    ```
 
 3. **Follow Prompts**  
