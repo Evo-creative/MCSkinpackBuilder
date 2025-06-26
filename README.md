@@ -9,10 +9,10 @@
 2. **运行脚本Run Script**  
    Windows
    ```Powershell
-   pwsh build_zh.ps1
+   powershell -ExecutionPolicy Bypass -File .\build_zh.ps1
    ```
    ```
-   pwsh build_en.ps1
+   powershell -ExecutionPolicy Bypass -File .\build_en.ps1
    ```
    Linux
    ```bash
