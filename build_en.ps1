@@ -29,31 +29,30 @@ foreach ($file in $skinFiles) {
         type = "free"
     }
 
-    "skin.pack_$($packName -replace ' ','_').$($file.BaseName.PadLeft(2,'0'))=$skinName" | Out-File "$tempDir/texts/zh_CN.lang" -Append
+    "skin.pack_$($packName -replace ' ','_').$($file.BaseName.PadLeft(2,'0'))=$skinName" | Out-File "$tempDir/texts/zh_CN.lang" -Append -Encoding UTF8
     Copy-Item $file.FullName $tempDir\
 }
 
-$manifest = @"
+@"
 {
-  "format_version": 1,
-  "header": {
-    "name": "$packName",
-    "uuid": "$(New-Guid)",
-    "version": [1, 0, 0]
-  },
-  "modules": [
-    {
-      "type": "skin_pack",
-      "uuid": "$(New-Guid)",
-      "version": [1, 0, 0]
-    }
-  ]
+    "format_version": 1,
+    "header": {
+        "name": "$packName",
+        "version": [1, 0, 0],
+        "uuid": "$(New-Guid)"
+    },
+    "modules": [
+        {
+            "version": [1, 0, 0],
+            "type": "skin_pack",
+            "uuid": "$(New-Guid)"
+        }
+    ]
 }
-"@
-[System.IO.File]::WriteAllText("$tempDir/manifest.json", $manifest, [System.Text.Encoding]::UTF8)
+"@ | Out-File "$tempDir/manifest.json" -Encoding UTF8
 
 
-$skinConfig | ConvertTo-Json -Depth 3 | Out-File "$tempDir/skins.json"
+$skinConfig | ConvertTo-Json -Depth 3 | Out-File "$tempDir/skins.json" -Encoding UTF8
 
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 try {
