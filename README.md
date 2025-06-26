@@ -11,10 +11,17 @@
    ```Powershell
    pwsh build_zh.ps1
    ```
+   ```
+   pwsh build_en.ps1
+   ```
    Linux
    ```bash
-   chmod +x cuild_zh.sh
+   chmod +x build_zh.sh
    ./build_zh.sh
+   ```
+   ```
+   chmod +x build_en.sh
+   ./build_en.sh
    ```
 
 4. **根据脚本指引填写Follow Prompts**  
